@@ -1,5 +1,12 @@
 body {
-  background-color: #000; }
+  background-color: #000;
+  color: #999;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px; }
+
+#container {
+  width: 800px;
+  margin: 0 auto; }
 
 #canvas {
   background-color: #000;
@@ -8,17 +15,26 @@ body {
   display: block;
   border-radius: 5px; }
 
-.drop {
-  background-color: #fff;
-  width: 1px;
-  height: 1px;
-  position: absolute; }
+#controls {
+  text-align: right; }
+
+.slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 150px;
+  height: 15px;
+  background: #444; }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #888; }
 
 .footer p {
-  color: #999;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
   text-align: center;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px; }
   .footer p a {

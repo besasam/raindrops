@@ -6,14 +6,26 @@
     <title>sɴᴏᴡғʟᴀᴋᴇs</title>
   </head>
   <body>
-    <canvas id="canvas" width="800" height="600"></canvas>
-    <div class="footer">
-      <p>
-        Made with <span id="heart">&#x2764;</span> by <a href="https://besasam.github.io">Besa</a>
-      </p>
-      <p>
-        <a href="https://github.com/besasam/raindrops">GitHub</a>
-      </p>
+    <div id="container">
+      <canvas id="canvas" width="800" height="600"></canvas>
+      <div id="controls">
+        <div>
+          <label for="flakes-control">Snowflakes: </label>
+          <input type="range" min="1" max="10" value="5" id="flakes-control" class="slider">
+        </div>
+        <div>
+          <label for="gravity-control">Gravity: </label>
+          <input type="range" min="1" max="10" value="1" id="gravity-control" class="slider">
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+          Made with <span id="heart">&#x2764;</span> by <a href="https://besasam.github.io">Besa</a>
+        </p>
+        <p>
+          <a href="https://github.com/besasam/raindrops">GitHub</a>
+        </p>
+      </div>
     </div>
     <script src="src/js/drops.js"></script>
   </body>

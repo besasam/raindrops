@@ -5,6 +5,8 @@ var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
 gradient.addColorStop(0, "#323991");
 gradient.addColorStop(1, "#000");
 
+var flakes = 5;
+
 var x = Math.random() * 800;
 var y = 0;
 
@@ -15,6 +17,21 @@ var ground = [];
 
 for(var i = 0; i < 800; i++) {
   ground.push(599);
+}
+
+var flakesControl = document.getElementById("flakes-control");
+flakesControl.oninput = function() {
+  flakes = this.value;
+}
+
+var gravityControl = document.getElementById("gravity-control");
+gravityControl.oninput = function() {
+  vy = this.value;
+  for(var i in particles) {
+    if(particles[i].vy > 0) {
+      particles[i].vy = this.value;
+    }
+  }
 }
 
 var particles = {},
@@ -48,9 +65,8 @@ Particle.prototype.draw = function() {
 setInterval(function() {
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-
   for(var i = 0; i < settings.density; i++) {
-    if(Math.random() > 0.995) {
+    if(Math.random() > (1 - (flakes / 1000))) {
       new Particle();
     }
   }
