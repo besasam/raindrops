@@ -16,7 +16,36 @@ body {
   border-radius: 5px; }
 
 #controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-line-pack: start;
+  align-content: flex-start; }
+
+#sliders {
   text-align: right; }
+
+.color-selectors {
+  text-align: center; }
+
+.color-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #444;
+  border-radius: 35px;
+  overflow: hidden;
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  margin: 5px 0 0 0; }
+  .color-select::-webkit-color-swatch-wrapper {
+    padding: 0; }
+  .color-select::-webkit-color-swatch {
+    border: none; }
 
 .slider {
   -webkit-appearance: none;
