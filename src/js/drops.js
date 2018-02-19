@@ -37,7 +37,7 @@ var windControl = document.getElementById("wind-control");
 windControl.oninput = function() {
   vx = +this.value;
   for(var i in particles) {
-    if(particles[i].vx != 0) {
+    if(particles[i].vy > 0) {
       particles[i].vx = vx;
     }
   }
@@ -89,7 +89,6 @@ function Particle() {
 }
 
 Particle.prototype.draw = function() {
-  this.x += this.vx;
   if(this.y == ground[this.x] || this.y < ground[this.x] && this.y >= ground[this.x] - vy) {
     if(this.y != ground[this.x]) {
       this.y = ground[this.x];
@@ -97,7 +96,10 @@ Particle.prototype.draw = function() {
     this.vy = 0;
     this.vx = 0;
     ground[this.x] -= 1;
-  } else { this.y += this.vy; }
+  } else {
+    this.y += this.vy;
+    this.x += this.vx;
+  }
   ctx.clearRect(settings.leftWall, settings.groundLevel, canvas.width, canvas.height);
   ctx.fillStyle = this.color;
   ctx.fillRect(this.x,this.y,1,1);
